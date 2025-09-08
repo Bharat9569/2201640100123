@@ -44,7 +44,7 @@ export const getShortUrlStats = async (req: Request, res: Response) => {
       return res.status(404).json({ error: "Shortcode not found" });
     }
 
-    // Check expiry
+    
     if (shortUrl.expiry < new Date()) {
       await Log("backend", "warn", "shorturl.controller", "Shortcode expired", { shortcode });
       return res.status(410).json({ error: "Shortcode expired" });

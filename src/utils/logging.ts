@@ -1,9 +1,9 @@
 import axios from "axios";
 
 const LOG_API = "http://20.244.56.144/eva1uation-service/logs";
-const AUTH_TOKEN = process.env.ACCESS_TOKEN; // set this from your token API
+const AUTH_TOKEN = process.env.ACCESS_TOKEN; 
 
-export async function Log(
+ async function Log(
   stack: "backend" | "frontend",
   level: "debug" | "info" | "warn" | "error" | "fatal",
   packageName: string,
@@ -20,3 +20,5 @@ export async function Log(
     console.error("Failed to send log", (err as any).message);
   }
 }
+
+export {Log}

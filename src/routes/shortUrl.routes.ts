@@ -3,7 +3,7 @@ import { createShortUrl, getShortUrlStats } from "../controllers/shortUrl.contro
 
 const router = Router();
 
-router.post("/", createShortUrl);        // POST /shorturls
-router.get("/:shortcode", getShortUrlStats);  // GET /shorturls/:shortcode
+router.post("/", createShortUrl);        
+router.get("/:shortcode", getShortUrlStats);  
 
 export default router;

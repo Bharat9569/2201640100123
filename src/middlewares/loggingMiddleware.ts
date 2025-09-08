@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from "express";
-import { log } from "../utils/logClient.js";
+import { Log } from "../utils/logging.js";
 
 export const loggingMiddleware = async (req: Request, res: Response, next: NextFunction) => {
   const start = Date.now();
@@ -7,7 +7,7 @@ export const loggingMiddleware = async (req: Request, res: Response, next: NextF
   res.on("finish", async () => {
     const duration = Date.now() - start;
 
-    await log(
+    await Log(
       "backend",
       "info",
       "request-logger",
